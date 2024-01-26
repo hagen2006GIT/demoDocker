@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="hagen">
+        <createTable tableName="tpp_product">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="agreement_id" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="product_code_id" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="client_id" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="type" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="number" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="priority" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="date_of_conclusion" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="start_date_time" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="end_date_time" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="days" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="penalty_rate" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="nso" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="threshold_amount" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="requisite_type" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="interest_rate_type" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="tax_rate" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="reason_close" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="state" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

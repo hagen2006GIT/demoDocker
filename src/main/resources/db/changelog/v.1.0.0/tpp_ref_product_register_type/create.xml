@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="hagen">
+        <createTable tableName="tpp_ref_product_register_type">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="value" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="register_type_name" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="product_class_code" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="account_type" type="int">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

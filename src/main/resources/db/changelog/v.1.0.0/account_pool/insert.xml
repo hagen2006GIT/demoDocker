@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="hagen">
+        <insert tableName="account_pool">
+            <column  name="branch_code" value="0022"/>
+            <column  name="currency_code" value="800"/>
+            <column  name="mdm_code" value="15"/>
+            <column  name="priority_code" value="00"/>
+            <column  name="registry_type_code" value="03.012.002_47533_ComSoLd"/>
+            <column  name="accounts" value="{475335516415314841861,4753321651354151,4753352543276345}"/>
+        </insert>
+        <insert tableName="account_pool">
+            <column  name="branch_code" value="0021"/>
+            <column  name="currency_code" value="500"/>
+            <column  name="mdm_code" value="13"/>
+            <column  name="priority_code" value="00"/>
+            <column  name="registry_type_code" value="02.001.005_45343_CoDowFF"/>
+            <column  name="accounts" value="{453432352436453276,45343221651354151,4534352543276345}"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

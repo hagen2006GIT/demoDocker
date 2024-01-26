@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="hagen">
+        <createTable tableName="account_pool">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="branch_code" type="varchar(4)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="currency_code" type="varchar(3)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="mdm_code" type="varchar(2)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="priority_code" type="varchar(2)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="registry_type_code" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="accounts" type="varchar[]">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
