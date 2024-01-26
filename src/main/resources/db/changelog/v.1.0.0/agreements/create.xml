@@ -12,6 +12,71 @@
             <column name="agreement_id" type="int">
                 <constraints nullable="true"/>
             </column>
+
+            <column name="generalAgreementId" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="supplementaryAgreementId" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="arrangementType" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="shedulerJobId" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="number" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="openingDate" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="closingDate" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="cancelDate" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="validityDuration" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="cancellationReason" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="status" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="interestCalculationDate" type="date">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="interestRate" type="float">
+                <constraints nullable="true"/>
+            </column>
+            <column name="coefficient" type="float">
+                <constraints nullable="true"/>
+            </column>
+            <column name="coefficientAction" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="minimumInterestRate" type="float">
+                <constraints nullable="true"/>
+            </column>
+            <column name="minimumInterestRateCoefficient" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="maximalnterestRate" type="float">
+                <constraints nullable="true"/>
+            </column>
+            <column name="maximalnterestRateCoefficient" type="float">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="maximalnterestRateCoefficientAction" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+
         </createTable>
     </changeSet>
 
