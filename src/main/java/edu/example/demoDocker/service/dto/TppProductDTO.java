@@ -10,22 +10,22 @@ import java.util.Date;
 @AllArgsConstructor
 public class TppProductDTO {
     private Long id;
-    private Long agreement_id;
-    private Long product_code_id;
-    private Long client_id;
+    private Long generalAgreementId;
+    private Long productCodeId;
+    private Long clientId;
     private String type;
     private String number;
     private Long priority;
-    private Date date_of_conclusion;
-    private Date start_date_time;
-    private Date end_date_time;
+    private Date dateOfConclusion;
+    private Date startDateTime;
+    private Date endDateTime;
     private Long days;
-    private Long penalty_rate;
+    private Long penaltyTate;
     private Long nso;
-    private Long threshold_amount;
-    private String requisite_type;
-    private String interest_rate_type;
-    private Long tax_rate;
-    private String reason_close;
+    private Long thresholdAmount;
+    private String requisiteType;
+    private String interestRateType;
+    private Long taxRate;
+    private String reasonClose;
     private String state;
 }

@@ -10,7 +10,7 @@
             <column name="id" type="serial">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="agreement_id" type="int">
+            <column name="general_agreement_id" type="int">
                 <constraints nullable="true"/>
             </column>
             <column name="product_code_id" type="int">

@@ -4,15 +4,17 @@ import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class AgreementsDTO {
     private Long id;
-    private Long agreement_id;
+//    private Long agreementId;
     private String generalAgreementId;
     private String supplementaryAgreementId;
     private String arrangementType;
@@ -29,8 +31,9 @@ public class AgreementsDTO {
     private float coefficient;
     private String coefficientAction;
     private float minimumInterestRate;
-    private String minimumInterestRateCoefficient;
-    private float maximalnterestRate;
-    private float maximalnterestRateCoefficient;
-    private String maximalnterestRateCoefficientAction;
+    private float minimumInterestRateCoefficient;
+    private String minimumInterestRateCoefficientAction;
+    private float maximalInterestRate;
+    private float maximalInterestRateCoefficient;
+    private String maximalInterestRateCoefficientAction;
 }

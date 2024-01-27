@@ -1,9 +1,8 @@
 package edu.example.demoDocker.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
 
 import java.util.Date;
 
@@ -14,25 +13,25 @@ import java.util.Date;
 @Table(name = "agreements") // ДС (сделки)
 public class Agreements {
     @Id @Column(name = "id") @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
-    @Column(name = "agreement_id") private Long agreement_id;
-    @Column(name = "generalAgreementId") private String generalAgreementId;
-    @Column(name = "supplementaryAgreementId") private String supplementaryAgreementId;
-    @Column(name = "arrangementType") private String arrangementType;
-    @Column(name = "shedulerJobId") private Long shedulerJobId;
+    @Column(name = "general_agreement_id") private String generalAgreementId;
+    @Column(name = "supplementary_agreement_id") private String supplementaryAgreementId;
+    @Column(name = "arrangement_type") private String arrangementType;
+    @Column(name = "sheduler_job_id") private Long shedulerJobId;
     @Column(name = "number") private String number;
-    @Column(name = "openingDate") private Date openingDate;
-    @Column(name = "closingDate") private Date closingDate;
-    @Column(name = "cancelDate") private Date cancelDate;
-    @Column(name = "validityDuration") private Long validityDuration;
-    @Column(name = "cancellationReason") private String cancellationReason;
+    @Column(name = "opening_date") private Date openingDate;
+    @Column(name = "closing_date") private Date closingDate;
+    @Column(name = "cancel_date") private Date cancelDate;
+    @Column(name = "validity_duration") private Long validityDuration;
+    @Column(name = "cancellation_reason") private String cancellationReason;
     @Column(name = "status") private String status;
-    @Column(name = "interestCalculationDate") private Date interestCalculationDate;
-    @Column(name = "interestRate") private float interestRate;
+    @Column(name = "interest_calculation_date") private Date interestCalculationDate;
+    @Column(name = "interest_rate") private float interestRate;
     @Column(name = "coefficient") private float coefficient;
-    @Column(name = "coefficientAction") private String coefficientAction;
-    @Column(name = "minimumInterestRate") private float minimumInterestRate;
-    @Column(name = "minimumInterestRateCoefficient") private String minimumInterestRateCoefficient;
-    @Column(name = "maximalnterestRate") private float maximalnterestRate;
-    @Column(name = "maximalnterestRateCoefficient") private float maximalnterestRateCoefficient;
-    @Column(name = "maximalnterestRateCoefficientAction") private String maximalnterestRateCoefficientAction;
+    @Column(name = "coefficient_action") private String coefficientAction;
+    @Column(name = "minimumInterest_rate") private float minimumInterestRate;
+    @Column(name = "minimumInterest_rate_coefficient") private float minimumInterestRateCoefficient;
+    @Column(name = "minimumInterest_rate_coefficient_action") private String minimumInterestRateCoefficientAction;
+    @Column(name = "maximal_interest_rate") private float maximalInterestRate;
+    @Column(name = "maximal_interest_rate_coefficient") private float maximalInterestRateCoefficient;
+    @Column(name = "maximal_interest_rate_coefficient_action") private String maximalInterestRateCoefficientAction;
 }

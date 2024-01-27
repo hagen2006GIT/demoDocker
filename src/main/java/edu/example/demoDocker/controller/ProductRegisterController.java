@@ -44,7 +44,7 @@ public class ProductRegisterController {
         }
 // step#3: поискать связные записи в Каталоге типов регистра (по полю value)
         // поищем в Продуктовом регистре
-        Optional<TppProduct> tppProd=tppProductRepository.findById(requestBodyForProductRegister.getInstanceId());
+/*        Optional<TppProduct> tppProd=tppProductRepository.findById(requestBodyForProductRegister.getInstanceId());
         // поищем в Каталоге типов регистра
         if(tppRefProductRegisterTypeRepository.findAllByValue(requestBodyForProductRegister.getRegistryTypeCode()).isEmpty()){
             throw new NoSuchElementException("КодПродукта="
@@ -53,7 +53,7 @@ public class ProductRegisterController {
                     +" не найден в Каталоге продуктов "
                     +"<PUBLIC.tpp_ref_product_register_type> "
             );
-        }
+        }*/
 // step#4: получить счет из пула счетов (идентификатор продуктового регистра account_id)
         String accountFirst=accountPoolRepository.GetAccountFromPool(requestBodyForProductRegister.getBranchCode())[0].split(",")[0];
         log.info("accountFromPool="+accountFirst);

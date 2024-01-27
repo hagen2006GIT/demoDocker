@@ -24,13 +24,11 @@ public class BookServiceImpl implements BookService {
     @Override public List<BookDTO> findAll() {
         return bookMapper.toListDto(bookRepository.findAll());
     }
-
     @Override public BookDTO findById(@NonNull Long id) {
         Logger logger=Logger.getLogger(BookServiceImpl.class.getName());
         logger.info("Mapper In");
         return Optional.ofNullable(getById(id)).map(bookMapper::modelToDto).get();
     }
-
     @Override @Transactional public BookDTO save(BookDTO book) {
         return bookMapper.modelToDto(bookRepository.save(
                 bookMapper.dtoToModel(book)));

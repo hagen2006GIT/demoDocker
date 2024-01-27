@@ -9,71 +9,70 @@
             <column name="id" type="serial">
                 <constraints nullable="true" primaryKey="true"/>
             </column>
-            <column name="agreement_id" type="int">
+            <column name="general_agreement_id" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
-
-            <column name="generalAgreementId" type="varchar(100)">
+            <column name="supplementary_agreement_id" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
-            <column name="supplementaryAgreementId" type="varchar(100)">
+            <column name="arrangement_type" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
-            <column name="arrangementType" type="varchar(100)">
-                <constraints nullable="true"/>
-            </column>
-            <column name="shedulerJobId" type="int">
+            <column name="sheduler_job_id" type="int">
                 <constraints nullable="true"/>
             </column>
             <column name="number" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
-            <column name="openingDate" type="date">
+            <column name="opening_date" type="date">
                 <constraints nullable="true"/>
             </column>
-            <column name="closingDate" type="date">
+            <column name="closing_date" type="date">
                 <constraints nullable="true"/>
             </column>
-            <column name="cancelDate" type="date">
+            <column name="cancel_date" type="date">
                 <constraints nullable="true"/>
             </column>
-            <column name="validityDuration" type="int">
+            <column name="validity_duration" type="int">
                 <constraints nullable="true"/>
             </column>
-            <column name="cancellationReason" type="varchar(100)">
+            <column name="cancellation_reason" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
             <column name="status" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
-            <column name="interestCalculationDate" type="date">
+            <column name="interest_calculation_date" type="date">
                 <constraints nullable="true"/>
             </column>
 
-            <column name="interestRate" type="float">
+            <column name="interest_rate" type="float">
                 <constraints nullable="true"/>
             </column>
             <column name="coefficient" type="float">
                 <constraints nullable="true"/>
             </column>
-            <column name="coefficientAction" type="varchar(100)">
+            <column name="coefficient_action" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
 
-            <column name="minimumInterestRate" type="float">
+            <column name="minimum_interest_rate" type="float">
                 <constraints nullable="true"/>
             </column>
-            <column name="minimumInterestRateCoefficient" type="varchar(100)">
+            <column name="minimum_interest_rate_coefficient" type="float">
                 <constraints nullable="true"/>
             </column>
-            <column name="maximalnterestRate" type="float">
+            <column name="minimum_interest_rate_coefficient_action" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
-            <column name="maximalnterestRateCoefficient" type="float">
+            <column name="maximal_interest_rate" type="float">
+                <constraints nullable="true"/>
+            </column>
+            <column name="maximal_interest_rate_coefficient" type="float">
                 <constraints nullable="true"/>
             </column>
 
-            <column name="maximalnterestRateCoefficientAction" type="varchar(100)">
+            <column name="maximal_interest_rate_coefficient_action" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
 

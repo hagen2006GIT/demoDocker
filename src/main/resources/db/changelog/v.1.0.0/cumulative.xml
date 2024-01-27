@@ -8,7 +8,6 @@
     <include file="account_pool/create.xml" relativeToChangelogFile="true" />
     <include file="account_pool/insert.xml" relativeToChangelogFile="true" />
     <include file="agreements/create.xml" relativeToChangelogFile="true" />
-    <include file="agreements/insert.xml" relativeToChangelogFile="true" />
     <include file="tpp_product/create.xml" relativeToChangelogFile="true" />
     <include file="tpp_product_register/create.xml" relativeToChangelogFile="true" />
     <include file="tpp_ref_account_type/create.xml" relativeToChangelogFile="true" />
