@@ -9,13 +9,13 @@
         <insert tableName="tpp_ref_product_register_type">
             <column  name="value" value="03.012.002_47533_ComSoLd"/>
             <column  name="register_type_name" value="Хранение ДМ."/>
-            <column  name="product_class_code" value="1"/>
+            <column  name="product_class_code" value="03.012.002"/>
             <column  name="account_type" value="1"/>
         </insert>
         <insert tableName="tpp_ref_product_register_type">
             <column  name="value" value="02.001.005_45343_CoDowFF"/>
             <column  name="register_type_name" value="Серебро. Выкуп"/>
-            <column  name="product_class_code" value="2"/>
+            <column  name="product_class_code" value="02.001.005_45343"/>
             <column  name="account_type" value="1"/>
         </insert>
     </changeSet>

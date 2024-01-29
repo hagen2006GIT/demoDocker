@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TppProductRegisterDTO {
     private Long id;
-    private Long product_id;
+    private Long productId;
     private String type;
-    private Long account_id;
-    private String currency_code;
+    private String accountId;
+    private String currencyCode;
     private String state;
 }

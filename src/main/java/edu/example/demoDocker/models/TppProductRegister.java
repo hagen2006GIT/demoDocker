@@ -16,7 +16,7 @@ public class TppProductRegister {
     @Id @Column(name = "id") @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
     @Column(name = "product_id") private Long productId;
     @Column(name = "type") private String type;
-    @Column(name = "account_id") private Long account_id;
-    @Column(name = "currency_code") private String currency_code;
+    @Column(name = "account_id") private String accountId;
+    @Column(name = "currency_code") private String currencyCode;
     @Column(name = "state") private String state;
 }

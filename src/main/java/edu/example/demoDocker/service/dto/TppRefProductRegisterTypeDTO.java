@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TppRefProductRegisterTypeDTO {
-    private Long internal_id;
+    private Long internalId;
     private String value;
-    private String register_type_name;
-    private String product_class_code;
-    private String account_type;
+    private String registerTypeName;
+    private String productClassCode;
+    private Long accountType;
 }

@@ -32,11 +32,12 @@ public class ProductRegisterController {
     @Autowired final TppRefProductRegisterTypeRepository tppRefProductRegisterTypeRepository;
     @Autowired final TppProductRepository tppProductRepository;
     @Autowired final AccountPoolRepository accountPoolRepository;
+    static String account;
 
     @PostMapping(value = "corporate-settlement-account/create")
     public ResponseEntity<ResponseBodyForProductRegistry> create(@Valid @RequestBody RequestBodyForProductRegister requestBodyForProductRegister){
 // step#2: Проверка таблицы ПР ("Продуктовый регистр") на дубли
-        if(tppProductRegisterRepository.Check1(requestBodyForProductRegister.getInstanceId(), requestBodyForProductRegister.getRegistryTypeCode())>0) {
+        if(tppProductRegisterRepository.Check1(requestBodyForProductRegister.getInstanceId(),requestBodyForProductRegister.getRegistryTypeCode())>0) {
             throw new DuplicateKeyException("Параметр registryTypeCode с типом регистра "
                     + requestBodyForProductRegister.getRegistryTypeCode()
                     +" уже существует для ЭП с ИД (instanceId) "
@@ -56,6 +57,7 @@ public class ProductRegisterController {
         }*/
 // step#4: получить счет из пула счетов (идентификатор продуктового регистра account_id)
         String accountFirst=accountPoolRepository.GetAccountFromPool(requestBodyForProductRegister.getBranchCode())[0].split(",")[0];
+        account=accountFirst;
         log.info("accountFromPool="+accountFirst);
 // step#5: вернуть ResponseBody с полученным account_id
         return ResponseEntity.status(HttpStatus.OK).body(ResponseBodyForProductRegistry.Of(accountFirst));

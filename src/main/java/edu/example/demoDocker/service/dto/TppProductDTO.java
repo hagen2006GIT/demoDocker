@@ -11,11 +11,11 @@ import java.util.Date;
 public class TppProductDTO {
     private Long id;
     private Long generalAgreementId;
-    private Long productCodeId;
-    private Long clientId;
+    private String productCodeId;
+    private String clientId;
     private String type;
     private String number;
-    private Long priority;
+    private String priority;
     private Date dateOfConclusion;
     private Date startDateTime;
     private Date endDateTime;

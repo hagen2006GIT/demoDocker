@@ -16,7 +16,7 @@
             <column name="type" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
-            <column name="account_id" type="int">
+            <column name="account_id" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
             <column name="currency_code" type="varchar(100)">

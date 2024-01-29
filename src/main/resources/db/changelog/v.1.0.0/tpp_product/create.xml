@@ -13,10 +13,10 @@
             <column name="general_agreement_id" type="int">
                 <constraints nullable="true"/>
             </column>
-            <column name="product_code_id" type="int">
+            <column name="product_code_id" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
-            <column name="client_id" type="int">
+            <column name="client_id" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
             <column name="type" type="varchar(100)">
@@ -25,7 +25,7 @@
             <column name="number" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
-            <column name="priority" type="int">
+            <column name="priority" type="varchar(100)">
                 <constraints nullable="true"/>
             </column>
             <column name="date_of_conclusion" type="date">

@@ -14,11 +14,11 @@ import java.util.Date;
 public class TppProduct {
     @Id @Column(name = "id") @GeneratedValue(strategy= GenerationType.IDENTITY) private Long id;
     @Column(name = "general_agreement_id") private Long generalAgreementId;
-    @Column(name = "product_code_id") private Long productCodeId;
-    @Column(name = "client_id") private Long clientId;
+    @Column(name = "product_code_id") private String productCodeId;
+    @Column(name = "client_id") private String clientId;
     @Column(name = "type") private String type;
     @Column(name = "number") private String number;
-    @Column(name = "priority") private Long priority;
+    @Column(name = "priority") private String priority;
     @Column(name = "date_of_conclusion") private Date dateOfConclusion;
     @Column(name = "start_date_time") private Date startDateTime;
     @Column(name = "end_date_time") private Date endDateTime;

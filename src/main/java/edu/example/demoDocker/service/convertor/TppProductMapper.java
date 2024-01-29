@@ -1,6 +1,5 @@
 package edu.example.demoDocker.service.convertor;
 
-import edu.example.demoDocker.models.Agreements;
 import edu.example.demoDocker.models.TppProduct;
 import edu.example.demoDocker.service.dto.TppProductDTO;
 import org.mapstruct.Mapper;

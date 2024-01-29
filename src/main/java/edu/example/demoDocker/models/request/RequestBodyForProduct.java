@@ -21,7 +21,7 @@ public class RequestBodyForProduct {
     @NotNull String mdmCode; // Код Клиента (mdm)
     @NotNull String contractNumber; // Номер договора
     @NotNull Date contractDate; // Дата заключения договора обслуживания
-    @NotNull Long priority; // Приоритет
+    @NotNull String priority; // Приоритет
     float interestRatePenalty; // Штрафная процентная ставка
     float minimalBalance; // Неснижаемый остаток
     float thresholdAmount; // Пороговая сумма
