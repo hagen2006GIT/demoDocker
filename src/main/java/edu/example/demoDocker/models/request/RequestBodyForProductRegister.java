@@ -15,7 +15,7 @@ public class RequestBodyForProductRegister {
     String registryTypeCode; // Тип регистра
     String accountType; //Тип счета
     String currencyCode; // Код валюты
-    String branchCode; //Код филиала
+    @NotNull String branchCode; //Код филиала
     String priorityCode; // Код срочности
     String mdmCode; // ID клиента
     String clientCode; // Код клиента
