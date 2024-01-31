@@ -16,7 +16,6 @@ import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
-
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -30,7 +29,7 @@ public class ProductService {
     @Autowired private final TppRefProductRegisterTypeRepository tppRefProductRegisterTypeRepository;
     @Autowired private final TppProductRegisterService tppProductRegisterService;
     @Autowired private final AccountPoolRepository accountPoolRepository;
-    boolean testCondition=false;
+    boolean testCondition=true;
 
     public ResponseBodyForProduct productService(RequestBodyForProduct requestBodyForProduct) {
 // step#2: Проверка таблицы ЭП ("Продукты") на дубли

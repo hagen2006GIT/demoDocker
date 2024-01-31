@@ -1,0 +1,65 @@
+﻿{
+    "data": {
+        "instanceId": "17",
+        "supplementaryAgreementId": [
+            {
+                "id": 25,
+                "generalAgreementId": "125",
+                "supplementaryAgreementId": "458",
+                "arrangementType": "НСО",
+                "shedulerJobId": null,
+                "number": "НСО-125",
+                "openingDate": "2024-01-11T00:00:00.000+00:00",
+                "closingDate": "2025-01-10T00:00:00.000+00:00",
+                "cancelDate": null,
+                "validityDuration": 365,
+                "cancellationReason": "",
+                "status": "открыт",
+                "interestCalculationDate": null,
+                "interestRate": 0.0,
+                "coefficient": 0.0,
+                "coefficientAction": "",
+                "minimumInterestRate": 0.0,
+                "minimumInterestRateCoefficient": 0.0,
+                "minimumInterestRateCoefficientAction": "",
+                "maximalInterestRate": 0.0,
+                "maximalInterestRateCoefficient": 0.0,
+                "maximalInterestRateCoefficientAction": ""
+            },
+            {
+                "id": 26,
+                "generalAgreementId": "127",
+                "supplementaryAgreementId": "462",
+                "arrangementType": "НСО",
+                "shedulerJobId": null,
+                "number": "НСО-127",
+                "openingDate": "2024-01-11T00:00:00.000+00:00",
+                "closingDate": "2025-01-10T00:00:00.000+00:00",
+                "cancelDate": null,
+                "validityDuration": 365,
+                "cancellationReason": "",
+                "status": "открыт",
+                "interestCalculationDate": null,
+                "interestRate": 0.0,
+                "coefficient": 0.0,
+                "coefficientAction": "",
+                "minimumInterestRate": 0.0,
+                "minimumInterestRateCoefficient": 0.0,
+                "minimumInterestRateCoefficientAction": "",
+                "maximalInterestRate": 0.0,
+                "maximalInterestRateCoefficient": 0.0,
+                "maximalInterestRateCoefficientAction": ""
+            }
+        ],
+        "registerId": [
+            {
+                "id": 13,
+                "productId": 100,
+                "type": "Хранение ДМ.",
+                "accountId": "475335516415314841861",
+                "currencyCode": "800",
+                "state": "s1"
+            }
+        ]
+    }
+}

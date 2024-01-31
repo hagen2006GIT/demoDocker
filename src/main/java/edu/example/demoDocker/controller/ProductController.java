@@ -37,7 +37,6 @@ public class ProductController {
     @Autowired private final TppRefProductRegisterTypeRepository tppRefProductRegisterTypeRepository;
     @Autowired private final TppProductRegisterService tppProductRegisterService;
     @Autowired private final AccountPoolRepository accountPoolRepository;
-    boolean testCondition=true;
 
     final ProductService productService;
     @PostMapping("corporate-settlement-instance/create")
@@ -62,68 +61,4 @@ public class ProductController {
         tppProductDTO.setThresholdAmount(tppProductDTO.getThresholdAmount());
         return tppProductDTO;
     }
-
-
-/*
-    public ResponseEntity<ResponseBodyForProduct> createOld(@Valid @RequestBody RequestBodyForProduct requestBodyForProduct) throws Exception {
-
-// step#2: Проверка таблицы ЭП ("Продукты") на дубли
-        Optional<TppProduct> tppProduct=tppProductRepository.findByNumber(requestBodyForProduct.getContractNumber());
-        if(tppProduct.isPresent() && testCondition){
-            throw new NoSuchElementException("Параметр ContractNumber № договора"
-                    +"<"+tppProduct.get().getNumber()+">"
-                    +" уже существует для ЭП с ID "
-                    +"<"+tppProduct.get().getId()+">"
-            );
-        }
-// step#3: Проверка таблицы ДС на дубли
-        log.info("array instanceArrangements.length = "+String.valueOf(requestBodyForProduct.getInstanceArrangements().length));
-        AgreementsDTO[] arrAgr=requestBodyForProduct.getInstanceArrangements();
-        StringBuilder doubleOfNumbers= new StringBuilder();
-        int cnt=0;
-        for (AgreementsDTO agreementsDTO : arrAgr) {
-            if(tppProductRepository.CheckDoubleOfAgreements(agreementsDTO.getNumber())>0){
-                doubleOfNumbers.append(agreementsDTO.getNumber()).append("|");
-                cnt+=1;
-            }
-        }
-        log.info("cnt = "+cnt+"; "+doubleOfNumbers.toString());
-        if(cnt>0 && testCondition){
-            throw new DuplicateKeyException("Параметр дополнительного соглашения(сделки) Number "
-                    +"<"+doubleOfNumbers+">"
-                    +" уже существует для ЭП с ИД (ContractNumber) "
-                    +"<"+requestBodyForProduct.getContractNumber()+">"
-            );
-        }
-// step#4: Проверить Каталог Типа регистра на уже существующие связные записи (если не найдены - исключение)
-        TppRefProductRegisterType tppRefProductRegisterType=
-                tppRefProductRegisterTypeRepository
-                        .findByProductClassCodeAndAccountType(requestBodyForProduct.getProductCode(),1L);
-        if(tppRefProductRegisterType==null) {
-            throw new NoSuchElementException("КодПродукта"
-                    +"<"+requestBodyForProduct.getProductCode()+">"
-                    +" не найдено в Каталоге продуктов "
-                    +"<PUBLIC.tpp_ref_product_register_type>"
-            );
-        }
-        log.info("tppRefProductRegisterType: " + tppRefProductRegisterType.getRegisterTypeName()); // !!! registerType
-// step#5: Добавить строку в таблицу tpp_product, заполнить согласно Request.Body
-        TppProductDTO resultTppProduct=tppProductService.save(tppProductModelToDto(requestBodyForProduct));
-// step#6: Добавить в таблицу ПР (tpp_product_register)
-        TppProductRegisterDTO tppProductRegisterDTO=new TppProductRegisterDTO();
-        tppProductRegisterDTO.setProductId(requestBodyForProduct.getInstanceId());
-        tppProductRegisterDTO.setType(tppRefProductRegisterType.getRegisterTypeName());
-        tppProductRegisterDTO.setAccountId(new AccountFromPool(accountPoolRepository).getAccount(requestBodyForProduct.getBranchCode()));
-        tppProductRegisterDTO.setCurrencyCode(requestBodyForProduct.getIsoCurrencyCode());
-        tppProductRegisterDTO.setState(String.valueOf(Status.s1));
-        TppProductRegisterDTO resultTppProductRegister=tppProductRegisterService.save(tppProductRegisterDTO);
-// step#7: Добавить ДС в таблицу agreements
-        for (AgreementsDTO agreementsDTO : arrAgr) {
-            AgreementsDTO agreement = agreementsService.save(agreementsDTO);
-            log.info(agreement.toString());
-        }
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(ResponseBodyForProduct.Of(String.valueOf(resultTppProduct.getId()),arrAgr,new TppProductRegisterDTO[]{resultTppProductRegister}));
-    }*/
 }
