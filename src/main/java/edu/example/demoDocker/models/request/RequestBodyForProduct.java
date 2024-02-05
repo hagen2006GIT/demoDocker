@@ -1,7 +1,6 @@
 package edu.example.demoDocker.models.request;
 
 import edu.example.demoDocker.service.dto.AgreementsDTO;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;

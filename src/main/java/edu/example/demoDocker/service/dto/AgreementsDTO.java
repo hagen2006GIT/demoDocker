@@ -1,11 +1,9 @@
 package edu.example.demoDocker.service.dto;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
 import java.util.Date;
 
 @Data
@@ -14,7 +12,6 @@ import java.util.Date;
 @ToString
 public class AgreementsDTO {
     private Long id;
-//    private Long agreementId;
     private String generalAgreementId;
     private String supplementaryAgreementId;
     private String arrangementType;

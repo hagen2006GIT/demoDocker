@@ -20,8 +20,12 @@ public class TppRefProductRegisterTypeServiceImpl implements TppRefProductRegist
     @Override public List<TppRefProductRegisterTypeDTO> findAll() {
         return tppRefProductRegisterTypeMapper.toListDto(tppRefProductRegisterTypeRepository.findAll());
     }
-    @Override
-    public List<TppRefProductRegisterType> findAllByValue(String value) {
-        return null;
+    @Override public TppRefProductRegisterType findAllByValue(String value) {
+        return tppRefProductRegisterTypeRepository.findAllByValue(value);
+    }
+
+    @Override public TppRefProductRegisterType findByProductClassCodeAndAccountType(String productClassCode, Long accountType) {
+        return tppRefProductRegisterTypeRepository
+                .findByProductClassCodeAndAccountType(productClassCode,accountType);
     }
 }

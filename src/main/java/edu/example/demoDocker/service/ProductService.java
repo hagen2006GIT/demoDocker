@@ -5,9 +5,6 @@ import edu.example.demoDocker.models.TppProduct;
 import edu.example.demoDocker.models.TppRefProductRegisterType;
 import edu.example.demoDocker.models.request.RequestBodyForProduct;
 import edu.example.demoDocker.models.response.ResponseBodyForProduct;
-import edu.example.demoDocker.repository.AccountPoolRepository;
-import edu.example.demoDocker.repository.TppProductRepository;
-import edu.example.demoDocker.repository.TppRefProductRegisterTypeRepository;
 import edu.example.demoDocker.service.dto.AgreementsDTO;
 import edu.example.demoDocker.service.dto.TppProductDTO;
 import edu.example.demoDocker.service.dto.TppProductRegisterDTO;
@@ -23,17 +20,16 @@ import java.util.Optional;
 @Log
 @Service
 public class ProductService {
-    @Autowired private final TppProductRepository tppProductRepository;
+    @Autowired private final TppRefProductRegisterTypeService tppRefProductRegisterTypeService;
     @Autowired private final AgreementsService agreementsService;
     @Autowired private final TppProductService tppProductService;
-    @Autowired private final TppRefProductRegisterTypeRepository tppRefProductRegisterTypeRepository;
     @Autowired private final TppProductRegisterService tppProductRegisterService;
-    @Autowired private final AccountPoolRepository accountPoolRepository;
+    @Autowired private final AccountPoolService accountPoolService;
     boolean testCondition=true;
 
     public ResponseBodyForProduct productService(RequestBodyForProduct requestBodyForProduct) {
 // step#2: Проверка таблицы ЭП ("Продукты") на дубли
-        Optional<TppProduct> tppProduct=tppProductRepository.findByNumber(requestBodyForProduct.getContractNumber());
+        Optional<TppProduct> tppProduct=tppProductService.findByNumber(requestBodyForProduct.getContractNumber());
         if(tppProduct.isPresent() && testCondition){
             throw new NoSuchElementException("Параметр ContractNumber № договора"
                     +"<"+tppProduct.get().getNumber()+">"
@@ -47,7 +43,7 @@ public class ProductService {
         StringBuilder doubleOfNumbers= new StringBuilder();
         int cnt=0;
         for (AgreementsDTO agreementsDTO : arrAgr) {
-            if(tppProductRepository.CheckDoubleOfAgreements(agreementsDTO.getNumber())>0){
+            if(tppProductService.CheckDoubleOfAgreements(agreementsDTO.getNumber())>0){
                 doubleOfNumbers.append(agreementsDTO.getNumber()).append("|");
                 cnt+=1;
             }
@@ -62,7 +58,7 @@ public class ProductService {
         }
 // step#4: Проверить Каталог Типа регистра на уже существующие связные записи (если не найдены - исключение)
         TppRefProductRegisterType tppRefProductRegisterType=
-                tppRefProductRegisterTypeRepository
+                tppRefProductRegisterTypeService
                         .findByProductClassCodeAndAccountType(requestBodyForProduct.getProductCode(),1L);
         if(tppRefProductRegisterType==null) {
             throw new NoSuchElementException("КодПродукта"
@@ -78,7 +74,7 @@ public class ProductService {
         TppProductRegisterDTO tppProductRegisterDTO=new TppProductRegisterDTO();
         tppProductRegisterDTO.setProductId(requestBodyForProduct.getInstanceId());
         tppProductRegisterDTO.setType(tppRefProductRegisterType.getRegisterTypeName());
-        tppProductRegisterDTO.setAccountId(new AccountFromPool(accountPoolRepository).getAccount(requestBodyForProduct.getBranchCode()));
+        tppProductRegisterDTO.setAccountId(new AccountFromPool(accountPoolService).getAccount(requestBodyForProduct.getBranchCode()));
         tppProductRegisterDTO.setCurrencyCode(requestBodyForProduct.getIsoCurrencyCode());
         tppProductRegisterDTO.setState(String.valueOf(Status.s1));
         TppProductRegisterDTO resultTppProductRegister=tppProductRegisterService.save(tppProductRegisterDTO);

@@ -3,11 +3,7 @@ package edu.example.demoDocker;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.example.demoDocker.models.request.RequestBodyForProduct;
 import edu.example.demoDocker.models.request.RequestBodyForProductRegister;
-import edu.example.demoDocker.repository.AccountPoolRepository;
-import edu.example.demoDocker.service.AccountFromPool;
-import edu.example.demoDocker.service.AgreementsService;
-import edu.example.demoDocker.service.ProductRegisterService;
-import edu.example.demoDocker.service.ProductService;
+import edu.example.demoDocker.service.*;
 import edu.example.demoDocker.service.dto.AgreementsDTO;
 import lombok.extern.java.Log;
 import org.junit.jupiter.api.Assertions;
@@ -27,7 +23,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @Log
-//@WebMvcTest(ProductRegisterController.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 class DemoDockerApplicationTests {
@@ -35,19 +30,20 @@ class DemoDockerApplicationTests {
 	@MockBean private ProductService productService;
 	@Autowired private MockMvc mockMvc;
 	@Autowired	ObjectMapper mapper = new ObjectMapper();
-	@Autowired AccountPoolRepository accountPoolRepository;
+	@Autowired
+	AccountPoolService accountPoolService;
 	@Autowired AgreementsService agreementsService;
 
 	@Test
 	@DisplayName("Проверка получения номера лицевого счета из пула для корректного сода подразделения")
 	void GetAccountFromPoolSuccess() {
-		AccountFromPool accountFromPool=new AccountFromPool(accountPoolRepository);
+		AccountFromPool accountFromPool=new AccountFromPool(accountPoolService);
 		Assertions.assertEquals("475335516415314841861",accountFromPool.getAccount("0022"),"Лицевой счет из пула счетов получен");
 	}
 	@Test
 	@DisplayName("Проверка ошибки получения номера лицевого счета из пула для некорректного сода подразделения")
 	void GetAccountFromPoolError() {
-		AccountFromPool accountFromPool=new AccountFromPool(accountPoolRepository);
+		AccountFromPool accountFromPool=new AccountFromPool(accountPoolService);
 		when(accountFromPool.getAccount("0023")).thenReturn("Тест успешен - Ошибка определения номера счета");
 	}
 	@Test
@@ -105,7 +101,6 @@ class DemoDockerApplicationTests {
 // заполнение умолчательными значениями структуры для доп. соглашений
 	private AgreementsDTO prepareAgreement(){
 		AgreementsDTO agr=new AgreementsDTO();
-
 		agr.setId(158L);
 		agr.setGeneralAgreementId("521");
 		agr.setSupplementaryAgreementId("854");

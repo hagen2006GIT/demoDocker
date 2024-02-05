@@ -8,6 +8,8 @@ import java.util.Optional;
 
 public interface TppProductRepository extends JpaRepository<TppProduct,Long> {
     public Optional<TppProduct> findByNumber(String value);
+    public Optional<TppProduct> findById(Long value);
+
     @Query("select count(1)"
             +" from Agreements"
             +" where number=:numberAgr")

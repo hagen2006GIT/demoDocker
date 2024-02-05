@@ -2,7 +2,6 @@ package edu.example.demoDocker.models.response;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.HashMap;
 
 @Getter @Setter

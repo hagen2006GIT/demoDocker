@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface TppRefProductRegisterTypeService {
     List<TppRefProductRegisterTypeDTO> findAll();
-    List<TppRefProductRegisterType> findAllByValue(String value);
+    TppRefProductRegisterType findByProductClassCodeAndAccountType(String productClassCode, Long accountType);
+    TppRefProductRegisterType findAllByValue(String typeCode);
 }

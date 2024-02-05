@@ -1,9 +1,7 @@
 package edu.example.demoDocker.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
-
 import java.util.Date;
 
 @Data
